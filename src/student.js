@@ -24,7 +24,7 @@ const Student = () => {
       noValidate
       autoComplete="off"
     >
-      <TextField id="outlined-basic" label="Student" onChange={handleChange} value={student} variant="outlined" />
+      <TextField id="outlined-basic" label="Alumno" onChange={handleChange} value={student} variant="outlined" />
     </Box>
   );
 }

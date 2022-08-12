@@ -4,21 +4,21 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import * as stateActions from "./app/actions/StateActions";
+import * as statusActions from "./app/actions/StatusActions";
 
-const states = [
+const possible_status = [
   "PRESENTE",
   "AUSENTE",
   "TARDE"
 ]
 
-const States = () => {
+const Status = () => {
 
   const dispatch = useDispatch();
-  const _state = useSelector((store) => store._state._state);
+  const status = useSelector((store) => store.status.status);
 
   const handleChange = (event) => {
-    dispatch(stateActions._state(event.target.value));
+    dispatch(statusActions.status(event.target.value));
   };
 
   return (
@@ -27,16 +27,16 @@ const States = () => {
       <Select
         labelId="demo-select-medium"
         id="demo-select-medium"
-        value={_state}
-        label="State"
+        value={status}
+        label="Status"
         onChange={handleChange}
       >
-        {states.map((__state) => (
+        {possible_status.map((status) => (
           <MenuItem
-            key={__state}
-            value={__state}
+            key={status}
+            value={status}
           >
-            {__state}
+            {status}
           </MenuItem>
         ))}
       </Select>
@@ -44,4 +44,4 @@ const States = () => {
   );
 }
 
-export default States;
+export default Status;

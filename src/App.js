@@ -9,8 +9,8 @@ import Courses from './courses';
 import * as courseActions from "./app/actions/CourseActions";
 import Date from './date';
 import * as dateActions from "./app/actions/DateActions";
-import States from './states';
-import * as stateActions from "./app/actions/StateActions";
+import Status from './status';
+import * as statusActions from "./app/actions/StatusActions";
 
 import axios from "axios";
 
@@ -25,7 +25,7 @@ function App() {
   const student = useSelector((store) => store.student.student);
   const course = useSelector((store) => store.course.course);
   const date = useSelector((store) => store.date.date);
-  const _state = useSelector((store) => store._state._state);
+  const status = useSelector((store) => store.status.status);
 
   const dispatch = useDispatch();
 
@@ -33,7 +33,7 @@ function App() {
     dispatch(studentActions.student(""));
     dispatch(courseActions.course(""));
     dispatch(dateActions.date(""));
-    dispatch(stateActions._state(""));
+    dispatch(statusActions.status(""));
   };
 
   const upload = useCallback(() => {
@@ -42,14 +42,14 @@ function App() {
       student: student,
       course: course,
       date: date,
-      _state: _state
+      status: status
     }
 
     if (
       data.student === "" ||
       data.course === "" ||
       data.date === "" ||
-      data._state === ""
+      data.status === ""
     ) {
       console.log("ERROR");
       setState('Error');
@@ -60,7 +60,7 @@ function App() {
     bodyFormData.append('student', data.student);
     bodyFormData.append('course', data.course);
     bodyFormData.append('date', data.date);
-    bodyFormData.append('_state', data._state);
+    bodyFormData.append('status', data.status);
 
     axios({
       method: "post",
@@ -82,7 +82,7 @@ function App() {
         setState('Error');
       });
 
-  }, [student, course, date, _state]);
+  }, [student, course, date, status]); // eslint-disable-line react-hooks/exhaustive-deps
   
   return (
     <div className="App">
@@ -92,7 +92,7 @@ function App() {
         <Student />
         <Courses />
         <Date />
-        <States />
+        <Status />
         <button onClick={upload}> Agregar nueva asistencia </button>
         {(state === 'Success') &&
           <div>
