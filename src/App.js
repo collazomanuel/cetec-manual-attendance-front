@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 
-import { React, useCallback, useState } from "react";
+import { React, useState, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Student from './student';
 import * as studentActions from "./app/actions/StudentActions";
@@ -64,21 +64,18 @@ function App() {
 
     axios({
       method: "post",
-      url: "http://localhost:8080/attendance",
+      url: process.env.BACK_URL + "/attendance",
       data: bodyFormData,
       headers: { "Content-Type": "multipart/form-data" },
       withCredentials: true
     })
       .then(function (response) {
         //handle success
-        console.log("EXITO");
         setState('Success');
         clearInputs();
       })
       .catch(function (response) {
         //handle error
-        
-        console.log("ERROR");
         setState('Error');
       });
 
