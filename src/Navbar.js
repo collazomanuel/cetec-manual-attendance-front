@@ -32,7 +32,7 @@ const Navbar = () => {
         <>
           <br/>
           <img src={logo} alt="Logo FIUBA" className="logo-img" />
-          <div className="Title center">MANUAL ATTENDANCE</div>
+          <div className="Title center">ASISTENCIA MANUAL</div>
           <Login />
         </>
       }

@@ -17,6 +17,8 @@ import axios from "axios";
 import logo from './logo.svg';
 
 import Alert from "@mui/material/Alert";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
 
 function App() {
 
@@ -85,12 +87,16 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} alt="Logo FIUBA" className="logo-img" />
-        <div className="Title">MANUAL ATTENDANCE</div>
+        <div className="Title">ASISTENCIA MANUAL</div>
         <Student />
         <Courses />
         <Date />
         <Status />
-        <button onClick={upload}> Agregar nueva asistencia </button>
+
+        <Box m={1} pt={0} className="center">
+          <Button onClick={upload} variant="contained"> Agregar nueva asistencia </Button>
+        </Box>
+
         {(state === 'Success') &&
           <div>
             <Alert variant="outlined" severity="success">
