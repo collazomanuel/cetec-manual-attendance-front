@@ -64,7 +64,7 @@ function App() {
 
     axios({
       method: "post",
-      url: process.env.BACK_URL + "/attendance",
+      url: process.env.REACT_APP_BACK_URL + "/attendance",
       data: bodyFormData,
       headers: { "Content-Type": "multipart/form-data" },
       withCredentials: true

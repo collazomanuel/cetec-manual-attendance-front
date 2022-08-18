@@ -4,8 +4,7 @@ import './App.css';
 
 const Login = () => {
 
-  const login_url = process.env.BACK_URL + "/auth/google";
-  console.log(login_url);
+  const login_url = process.env.REACT_APP_BACK_URL + "/auth/google";
 
   return(
     <Box m={0} pt={0} className="center">

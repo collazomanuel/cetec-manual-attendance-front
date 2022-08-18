@@ -4,7 +4,7 @@ import './App.css';
 
 const Logout = () => {
 
-  const logout_url = process.env.BACK_URL + "/logout";
+  const logout_url = process.env.REACT_APP_BACK_URL + "/logout";
 
   return(
     <Box m={0} pt={0} className="right">
