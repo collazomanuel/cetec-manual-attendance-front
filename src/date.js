@@ -27,6 +27,8 @@ const Date = () => {
         <Stack spacing={3}>
           <DateTimePicker
             label="Hora de asistencia"
+            inputFormat="DD/MM/YYYY HH:mm"
+            ampm={false}
             value={date || null}
             onChange={handleChange}
             renderInput={(params) => <TextField {...params} sx={{ m: 1 }} />}

@@ -1,6 +1,6 @@
 
 import { createStore, combineReducers } from "redux";
-import { studentReducer } from "./reducers/SudentReducer";
+import { studentReducer } from "./reducers/StudentReducer";
 import { courseReducer } from "./reducers/CourseReducer";
 import { statusReducer } from "./reducers/StatusReducer";
 import { dateReducer } from "./reducers/DateReducer";

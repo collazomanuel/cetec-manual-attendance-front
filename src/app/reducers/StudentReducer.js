@@ -1,10 +1,10 @@
-const initialState = { course: '' };
+const initialState = { student: '' };
 
 export function studentReducer(state = initialState, action) {
   switch (action.type) {
     case "STUDENT":
       return {
-        course: action.newStudent,
+        student: action.newStudent,
       };
 
     default:
