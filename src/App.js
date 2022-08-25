@@ -39,7 +39,7 @@ function App() {
   };
 
   const upload = useCallback(() => {
-
+    console.log(student);
     const data = {
       student: student,
       course: course,
